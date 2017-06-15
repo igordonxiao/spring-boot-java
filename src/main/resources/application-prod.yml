@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://mypostgres:5432/springbootdemo
+    username: postgres
+    password: root
+    platform: POSTGRESQL
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+server:
+  port: 8080
