@@ -1,5 +1,7 @@
 package io.github.igordonxiao.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,9 +10,11 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
+    @ApiModelProperty(value = "ID")
     private Long id;
 
     @Column(name = "name")
+    @ApiModelProperty(value = "用户名")
     private String name;
 
     public Long getId() {
