@@ -37,7 +37,7 @@ public class UserControllerTest {
         user.setName("Gordon");
 
         given(userService.getById(Mockito.anyLong())).willReturn(user);
-        mvc.perform(get("/users/1").accept(MediaType.parseMediaType("application/json;charset=UTF-8"))).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("{\"status\":200")));
+        mvc.perform(get("/users/1").accept(MediaType.parseMediaType("application/json;charset=UTF-8"))).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("id")));
     }
 
 }
