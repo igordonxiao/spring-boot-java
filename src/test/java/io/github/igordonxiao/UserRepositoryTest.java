@@ -12,6 +12,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
 
@@ -23,6 +24,7 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@EnableWebMvc
 public class UserRepositoryTest {
     @Autowired
     private TestEntityManager testEntityManager;
