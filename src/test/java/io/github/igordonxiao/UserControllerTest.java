@@ -57,6 +57,8 @@ public class UserControllerTest {
         userEntity.setId(1L);
         given(userService.save(Mockito.any(User.class)))
                 .willReturn(userEntity);
+        given(userService.getById(Mockito.anyLong()))
+                .willReturn(userEntity);
 
         User postUserEntity = new User();
         mvc.perform(MockMvcRequestBuilders.post("/users").contentType(MediaType.APPLICATION_JSON).accept(JSON_MEDIA_TYPE).content(objectMapper.writeValueAsBytes(postUserEntity))).andDo(print()).andExpect(status().isCreated()).andExpect(content().string(containsString("{\"id\":1")));
