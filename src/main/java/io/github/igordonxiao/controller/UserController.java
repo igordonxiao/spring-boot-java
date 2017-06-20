@@ -6,6 +6,7 @@ import io.github.igordonxiao.service.UserService;
 import io.swagger.annotations.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -46,6 +47,7 @@ public class UserController {
     @ApiImplicitParam(name = "user", value = "user entity", required = true, dataType = "User")
     @PostMapping
     @ResponseBody
+    @ResponseStatus(HttpStatus.CREATED)
     public User add(@ApiParam(value = "user entity", type = "User") @RequestBody User user) {
         User savedUser = userService.save(user);
         if (savedUser == null) throw HttpException.SERVER_ERROR;
