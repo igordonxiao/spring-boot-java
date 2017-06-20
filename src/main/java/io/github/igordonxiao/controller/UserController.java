@@ -51,7 +51,7 @@ public class UserController {
     public User add(@ApiParam(value = "user entity", type = "User") @RequestBody User user) {
         User savedUser = userService.save(user);
         if (savedUser == null) throw HttpException.SERVER_ERROR;
-        return savedUser;
+        return userService.getById(savedUser.getId());
     }
 
     /**
