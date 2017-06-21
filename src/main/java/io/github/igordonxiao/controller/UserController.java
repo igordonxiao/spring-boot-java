@@ -82,7 +82,6 @@ public class UserController {
      * @return User
      */
     @ApiOperation(value = "delete user by id", notes = "")
-    @ApiImplicitParam(name = "id", value = "user id", required = true, dataType = "Long")
     @DeleteMapping(value = "/{id}")
     @ResponseBody
     public User delete(@ApiParam(value = "user id", type = "Long") @PathVariable Long id) {
