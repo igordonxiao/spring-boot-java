@@ -4,13 +4,9 @@
 
 `mvn clean install -Dmaven.test.skip=true -P prod`
 
-## 2. Run docker-compose
+## 2. Run docker build
 
-`cd src/main/docker`
-
-`docker-compose up`
-
-* if you want to delete containers, stop these containers first then execute command `docker-compose rm --all`
+`mvn package docker:build`
 
 
 # Swagger2
